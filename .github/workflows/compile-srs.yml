@@ -1,0 +1,50 @@
+name: Compile JSON to SRS
+
+on:
+  push:
+    paths:
+      - '**.json'
+
+permissions:
+  contents: write
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up sing-box and jq
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq
+          curl -fsSL https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-linux-amd64.tar.gz | tar xz
+          mv sing-box-*/sing-box ./sing-box
+          chmod +x ./sing-box
+
+      - name: Validate JSON files
+        run: |
+          json_files=$(find . -type f -name "*.json")
+          if [ -z "$json_files" ]; then
+            echo "No JSON files found"
+            exit 0
+          fi
+
+          for file in $json_files; do
+            jq . "$file" || { echo "Invalid JSON in $file"; exit 1; }
+          done
+
+      - name: Compile JSON to SRS
+        run: |
+          find . -type f -name "*.json" | while read -r file; do
+            output_file="${file%.json}.srs"
+            ./sing-box rule-set compile --output "$output_file" "$file"
+          done
+
+      - name: Commit SRS file
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          find . -name "*.srs" -exec git add {} +
+          git commit -m "Add compiled SRS file" || echo "No changes to commit"
+          git push
