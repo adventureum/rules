@@ -18,9 +18,14 @@ jobs:
       - name: Set up sing-box and jq
         run: |
           sudo apt-get update && sudo apt-get install -y jq
-          curl -fsSL https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-linux-amd64.tar.gz | tar xz
+          ASSET_URL=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest \
+            | jq -r '.assets[] | select(.name | test("linux-amd64.tar.gz$")) | .browser_download_url')
+          curl -LO "$ASSET_URL"
+          FILENAME=$(basename "$ASSET_URL")
+          tar -xzf "$FILENAME"
           mv sing-box-*/sing-box ./sing-box
           chmod +x ./sing-box
+
 
       - name: Validate JSON files
         run: |
