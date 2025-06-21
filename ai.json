@@ -22,7 +22,8 @@
         "host.livekit.cloud",
         "turn.livekit.cloud",
         "openai.com.cdn.cloudflare.net",
-        "gemini.google.com"
+        "gemini.google.com",
+        "perplexity.ai"
       ],
       "domain_regex": "^chatgpt-async-webps-prod-\\S+-\\d+\\.webpubsub\\.azure\\.com$"
     }
