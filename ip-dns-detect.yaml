@@ -1,0 +1,93 @@
+payload:
+  # === 核心综合检测与 DNS 泄漏测试 ===
+  - DOMAIN-SUFFIX,browserleaks.com
+  - DOMAIN-SUFFIX,browserleaks.org
+  - DOMAIN-SUFFIX,ipleak.net
+  - DOMAIN-SUFFIX,dnsleaktest.com
+  - DOMAIN-SUFFIX,dnsleak.com
+  - DOMAIN-SUFFIX,dnscheck.tools
+  - DOMAIN-SUFFIX,whoer.net
+  - DOMAIN-SUFFIX,whoer.com
+  - DOMAIN-SUFFIX,whoerip.com
+  - DOMAIN-SUFFIX,bash.ws
+  - DOMAIN-SUFFIX,ipx.ac
+  - DOMAIN-SUFFIX,browserscan.net
+  - DOMAIN-SUFFIX,todetect.net
+  - DOMAIN-SUFFIX,experte.com
+  - DOMAIN-SUFFIX,perfect-privacy.com
+  - DOMAIN-SUFFIX,mullvad.net
+  - DOMAIN-SUFFIX,check.mullvad.net
+  - DOMAIN-SUFFIX,pixelscan.net
+  - DOMAIN-SUFFIX,doileak.com
+  - DOMAIN-SUFFIX,ip-check.info
+
+  # === IP 查询接口与 API (高频调用/命令行常用) ===
+  - DOMAIN-SUFFIX,ip-api.com
+  - DOMAIN-SUFFIX,ipapi.co
+  - DOMAIN-SUFFIX,ipapi.is
+  - DOMAIN-SUFFIX,ipinfo.io
+  - DOMAIN-SUFFIX,ip.sb
+  - DOMAIN-SUFFIX,ip.gs
+  - DOMAIN-SUFFIX,ip.la
+  - DOMAIN-SUFFIX,ip.me
+  - DOMAIN-SUFFIX,ip.tyk.nu
+  - DOMAIN-SUFFIX,ifconfig.me
+  - DOMAIN-SUFFIX,ifconfig.co
+  - DOMAIN-SUFFIX,ident.me
+  - DOMAIN-SUFFIX,icanhazip.com
+  - DOMAIN-SUFFIX,myip.com
+  - DOMAIN-SUFFIX,ipaddress.my
+  - DOMAIN-SUFFIX,ipecho.net
+  - DOMAIN-SUFFIX,ip-tracker.org
+  - DOMAIN-SUFFIX,db-ip.com
+  - DOMAIN-SUFFIX,ipstack.com
+  - DOMAIN-SUFFIX,ipify.org
+  - DOMAIN-SUFFIX,curlmyip.com
+  - DOMAIN-SUFFIX,ipcalf.com
+  - DOMAIN-SUFFIX,ip-neighbor.com
+
+  # === IPv6 专项检测 ===
+  - DOMAIN-SUFFIX,ipv6-test.com
+  - DOMAIN-SUFFIX,test-ipv6.com
+  - DOMAIN-SUFFIX,ipv6leak.com
+  - DOMAIN-SUFFIX,v6.ident.me
+  - DOMAIN-SUFFIX,v6.ip.sb
+
+  # === VPN 厂商内置检测页 (补充遗漏) ===
+  - DOMAIN-SUFFIX,nordvpn.com
+  - DOMAIN-SUFFIX,expressvpn.com
+  - DOMAIN-SUFFIX,surfshark.com
+  - DOMAIN-SUFFIX,protonvpn.com
+  - DOMAIN-SUFFIX,ivpn.net
+  - DOMAIN-SUFFIX,windscribe.com
+  - DOMAIN-SUFFIX,airvpn.org
+  - DOMAIN-SUFFIX,astrill.com
+  - DOMAIN-SUFFIX,vyprvpn.com
+  - DOMAIN-SUFFIX,hide.me
+  - DOMAIN-SUFFIX,privado.live
+  - DOMAIN-SUFFIX,privadovpn.com
+
+  # === IP 声誉、风险与黑名单检测 (侦探工具/纯净度测试) ===
+  - DOMAIN-SUFFIX,abuseipdb.com
+  - DOMAIN-SUFFIX,scamalytics.com
+  - DOMAIN-SUFFIX,ipqualityscore.com
+  - DOMAIN-SUFFIX,criminalip.io
+  - DOMAIN-SUFFIX,ipvoid.com
+  - DOMAIN-SUFFIX,virustotal.com
+  - DOMAIN-SUFFIX,maxmind.com
+  - DOMAIN-SUFFIX,ip2location.com
+  - DOMAIN-SUFFIX,ip2proxy.com
+  - DOMAIN-SUFFIX,ipdetective.io
+  - DOMAIN-SUFFIX,antifraudcheck.com
+  - DOMAIN-SUFFIX,ipregistry.co
+  - DOMAIN-SUFFIX,ipdata.co
+
+  # === 其他常用 IP 工具与学术检测 ===
+  - DOMAIN-SUFFIX,whatismyip.com
+  - DOMAIN-SUFFIX,ip8.com
+  - DOMAIN-SUFFIX,showmyip.com
+  - DOMAIN-SUFFIX,getmyip.com
+  - DOMAIN-SUFFIX,myip.social
+  - DOMAIN-SUFFIX,caida.org
+  - DOMAIN-SUFFIX,skk.moe
+  - DOMAIN-SUFFIX,ip33.com
